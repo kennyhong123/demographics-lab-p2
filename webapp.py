@@ -11,7 +11,7 @@ def get_state_options():
     op = reques.args['option']
     with open('county_demographics.json') as demographics_data:
         counties = json.load(demographics_data)
-    return op += Markup("<option value=\"" + c["State"] + "\">" + c["State"] + "</option>")
+    return op += Markup("<option value=\"" + counties[0]["State"] + "\">" + counties[0]["State"] + "</option>")
     
     
 if __name__=="__main__":
