@@ -9,7 +9,7 @@ def render_main():
 
 def get_state_options():
     op = reques.args['option']
-    with open('{{url_for("static", {"filename": 'county_demographics.json'})}}') as demographics_data:
+    with open('county_demographics.json') as demographics_data:
         counties = json.load(demographics_data)
     return op += Markup("<option value=\"" + c["State"] + "\">" + c["State"] + "</option>")
     
