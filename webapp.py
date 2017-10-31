@@ -5,11 +5,12 @@ app = Flask(__name__) #__name__ = "__main__" if this is the file that was run.  
 def get_state_options():
     option = request.args['option']
     option = Markup("<option value="memes">"+ "memes" + "</option>")
+    return option
 
 @app.route("/")
 def render_main():
     get_state_options()
-    return render_template('home.html')
+    return render_template('home.html', option = get_state_options())
     
     
 if __name__=="__main__":
